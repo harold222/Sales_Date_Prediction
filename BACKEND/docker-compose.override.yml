@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  pruebadb:
+    container_name: pruebadb
+    environment:
+      SA_PASSWORD: "P@ssw0rd1"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_TCP_PORT: 1433
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_prueba:/var/opt/mssql/
+      - ./setuq.sql:/usr/src/app/init.sql 
+    entrypoint: /bin/bash -c "/opt/mssql/bin/sqlservr & sleep 30s && /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P P@ssw0rd1 -i /usr/src/app/init.sql && tail -f /dev/null"
+  backend.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    depends_on:
+      - pruebadb
+    ports:
+      - "6000:8080"
+      - "6060:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

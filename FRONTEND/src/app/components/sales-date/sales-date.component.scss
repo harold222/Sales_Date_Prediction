@@ -1,0 +1,58 @@
+.sales {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 95%;
+  margin-top: 1rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: .5rem;
+
+  &-header {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h5 {
+      font-weight: bold;
+    }
+  }
+}
+
+.column {
+
+  &-small {
+    width: 17%;
+    padding: 8px 16px;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+  }
+}
+
+.prediccion {
+  &-buttons {
+
+    button {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.mat-mdc-cell {
+  padding: 8px 16px !important;
+}
+
+mat-form-field.search-field {
+  width: 60%; 
+}

@@ -1,0 +1,29 @@
+﻿$small: 576px;
+$medium: 768px;
+$large: 992px;
+$x-large: 1200px;
+$xx-large: 1400px;
+
+@mixin media-min-width($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-max-width($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-min-height($breakpoint) {
+  @media (min-height: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-max-height($breakpoint) {
+  @media (max-height: $breakpoint) {
+    @content;
+  }
+}
