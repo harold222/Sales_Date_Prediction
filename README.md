@@ -137,4 +137,7 @@ La url base depende de la configuración que se utilice para la ejecución de la
 Se utiliza XUnit para realizar pruebas de los servicios
 
 ## Web App
-Para esto se utilizo angular en la version 18 con angular material, se usaron los mismos componentes que el mockup, se usaron variables de entorno para guardar la url de la api a consumir en el archivo .env se dejo apuntando a docker
+Para esto se utilizo angular en la version 18 con angular material, se usaron los mismos componentes que el mockup, se usaron variables de entorno para guardar la url de la api a consumir en el archivo .env se dejo apuntando a docker, para ejecutar el proyecto mediante el comando ng serve
+
+## D3 js
+Se utilizo una cdn publica para importar dicha libreria, para ejecutar el proyecto se debe abrir el archivo index.html en un navegador
